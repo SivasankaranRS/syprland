@@ -1,0 +1,2 @@
+# syprland
+My Hyprland setup
