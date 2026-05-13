@@ -1,0 +1,16 @@
+// -*- mode: jsonc -*-
+{
+    "include": [
+        "modules/main.jsonc",
+        "modules/workspaces.jsonc",
+        "modules/system.jsonc",
+        "modules/powerprofiles.jsonc",
+        "modules/hardware.jsonc",
+        "modules/connections.jsonc",
+        "modules/audio.jsonc",
+
+        "modules/custom/media.jsonc",
+        "modules/custom/power.jsonc",
+        "modules/groups/left_group.jsonc"
+    ]
+}

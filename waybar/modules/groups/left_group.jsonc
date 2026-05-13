@@ -1,0 +1,22 @@
+{
+    "group/left_group": {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 200,
+            "children-class": "not-power",
+            "transition-left-to-right": true
+        },
+        "modules": [
+            "custom/left_group-wrap",
+            "backlight",
+            "keyboard-state",
+            "idle_inhibitor",
+            "power-profiles-daemon",
+            "bluetooth"
+        ]
+    },
+        "custom/left_group-wrap": {
+        "format": "<span size='larger'></span>",
+        "tooltip": false
+    }
+}
