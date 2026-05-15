@@ -1,7 +1,8 @@
 -- Set programs that you use
 local terminal = "kitty"
 local fileManager = "dolphin"
-local menu = "wofi --show drun"
+local menu = "fuzzel --show dmenu"
+local clipboard = "cursor-clip"
 
 ---------------------
 ---- KEYBINDINGS ----
@@ -71,8 +72,8 @@ hl.bind(
 	hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"),
 	{ locked = true, repeating = true }
 )
-hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%+"), { locked = true, repeating = true })
-hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-"), { locked = true, repeating = true })
+hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl s 5%+"), { locked = true, repeating = true })
+hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl s 5%-"), { locked = true, repeating = true })
 
 -- Requires playerctl
 hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"), { locked = true })
@@ -93,3 +94,8 @@ hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("pkill waybar || waybar  &"))
 --hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("killall waybar && waybar"))
 --Screenshot
 hl.bind("PRINT", hl.dsp.exec_cmd("$HOME/.config/hypr/scripts/capture_menu.sh"), { locked = true })
+
+-- Clipboard manager
+hl.bind(mainMod .. " + Y", hl.dsp.exec_cmd(clipboard), { locked = true })
+
+hl.bind(mainMod .. " + D", hl.dsp.exec_cmd("hyprctl dispatch hyprspace:toggle"), { locked = true })

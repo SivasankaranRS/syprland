@@ -47,3 +47,52 @@ hl.window_rule({
     move  = "20 monitor_h-120",
     float = true,
 })
+
+-- Steam Games: Enable tearing (immediate) and force fullscreen
+-- hl.window_rule({
+--     name  = "steam-games-performance",
+--     match = { class = "category:steam_app_.*" },
+
+--     immediate  = true,
+--     fullscreen = true,
+-- })
+
+
+-- Picture in Picture Rule
+hl.window_rule({
+  name  = "brave-pip",
+  match = { 
+    title = "^(Picture in picture)$" 
+  },
+  float = true,
+  pin   = true,
+  size  = {320, 180},
+  -- Moves it to the bottom right corner (monitor-local coordinates)
+  move  = {"monitor_w - 330", "monitor_h - 190"}
+})
+
+
+-- Bluetooth Manager Rule
+hl.window_rule({
+    name  = "bluetooth",
+    match = { 
+    class = "blueman-manager"
+    },
+    float  = true,
+    size   = {"monitor_w * 0.5", "monitor_h * 0.5"},
+    center = true,
+    animation = "popin"
+})
+
+-- Bluetooth Manager Rule
+hl.window_rule({
+    name  = "dolphin",
+    match = { 
+    class = "org.kde.dolphin"
+    },
+    float  = true,
+    size   = {"monitor_w * 0.5", "monitor_h * 0.5"},
+    center = true,
+    animation = "popin"
+})
+
