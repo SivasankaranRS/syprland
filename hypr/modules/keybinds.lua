@@ -1,6 +1,6 @@
 -- Set programs that you use
 local terminal = "kitty"
-local fileManager = "dolphin"
+local fileManager = "thunar"
 local menu = "fuzzel --show dmenu"
 local clipboard = "cursor-clip"
 
@@ -90,7 +90,7 @@ hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true 
 -----------------------------
 
 -- Waybar
-hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("pkill waybar || waybar  &"))
+hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("pkill -SIGUSR1 '^waybar$'"))
 --hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("killall waybar && waybar"))
 --Screenshot
 hl.bind("PRINT", hl.dsp.exec_cmd("$HOME/.config/hypr/scripts/capture_menu.sh"), { locked = true })
@@ -98,4 +98,23 @@ hl.bind("PRINT", hl.dsp.exec_cmd("$HOME/.config/hypr/scripts/capture_menu.sh"), 
 -- Clipboard manager
 hl.bind(mainMod .. " + Y", hl.dsp.exec_cmd(clipboard), { locked = true })
 
-hl.bind(mainMod .. " + D", hl.dsp.exec_cmd("hyprctl dispatch hyprspace:toggle"), { locked = true })
+-- Swaync Notifications Center
+hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("swaync-client -t -sw"), { locked = true })
+
+hl.bind(
+	mainMod .. " + XF86MonBrightnessUp",
+	hl.dsp.exec_cmd("hyprctl hyprsunset gamma +10"),
+	{ locked = true, repeating = true }
+)
+hl.bind(
+	mainMod .. " + XF86MonBrightnessDown",
+	hl.dsp.exec_cmd("hyprctl hyprsunset gamma -10"),
+	{ locked = true, repeating = true }
+)
+
+-- Lock screen
+hl.bind("CTRL + escape", hl.dsp.exec_cmd("hyprlock"), { locked = true, repeating = true })
+
+-- logout Menu
+hl.bind("SHIFT + escape", hl.dsp.exec_cmd("wleave"), { locked = true, repeating = true })
+

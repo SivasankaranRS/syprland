@@ -1,0 +1,97 @@
+/**
+ * See https://gnome.pages.gitlab.gnome.org/libadwaita/doc/main/css-variables.html for more CSS variables.
+ * Or use your own colors. Both work, but using your own colors may break the automatic light/dark theme function.
+ */
+
+
+window {
+    font-family: Fira Code Medium;
+    font-size: 16pt;
+    color:  white; /* text */
+    background-color: rgba(24, 27, 32, 0.7);
+    
+}
+
+
+/* button {
+    color: oklab(from var(--view-fg-color) var(--standalone-color-oklab));
+    background-color: var(--view-bg-color);
+    border: none;
+    padding: 0px;
+    margin: 10px;
+    border-radius: 10px;
+
+    min-width: 100px;  
+    min-height: 100px;  
+    margin-bottom: 50px;
+    margin-top: 50px;
+} */
+
+
+
+button {
+    /* GTK uses min-width and min-height to force standard dimensions */
+
+    /* Force padding to 0 so internal labels don't balloon the button size */
+    padding: 20px;
+    
+    margin: 20px;
+
+    /* Your existing styles */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    animation: gradient_f 20s ease-in infinite;
+    transition: all 0.3s ease-in;
+    box-shadow: 0 0 10px 2px transparent;
+    border-radius: 36px;
+}
+
+
+button label.action-name {
+    font-size: 24px;
+    font-weight: 400;
+}
+
+button label.keybind {
+    font-size: 20px;
+    font-family: monospace;
+}
+
+button:hover label.keybind, button:focus label.keybind {
+    opacity: 1;
+}
+
+button:focus,
+button:hover {
+    background-color: color-mix(in srgb, var(--accent-bg-color), var(--view-bg-color));
+}
+
+button:active {
+    color: var(--accent-fg-color);
+    background-color: var(--accent-bg-color);
+}
+
+button#shutdown {
+    --view-fg-color: #ff8d8d;
+}
+
+button#hibernate {
+    --view-fg-color: #a8c0ff;
+}
+
+button#reboot {
+    --view-fg-color: #84ffaa;
+}
+
+button#lock {
+    --view-fg-color: #ffe8b6;
+}
+
+button#logout {
+    --view-fg-color: #ffcca8;
+}
+
+button#suspend {
+    --view-fg-color: #caaff9;
+}

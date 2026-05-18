@@ -8,6 +8,7 @@
     "modules-left": [
         "group/left_group",
         "clock",
+        "pulseaudio",
         "custom/media"
         // "hyprland/mode",
         // "hyprland/scratchpad"
@@ -19,7 +20,6 @@
     ],
     "modules-right": [
         //"mpd",
-        "pulseaudio",
         "network",
         //"cpu",
         //"memory",
@@ -27,6 +27,7 @@
         //"keyboard-state",
         //"hyprland/language",
         "battery",
+        "custom/notification",
         // "battery#bat2",
         "tray",
         "custom/power"

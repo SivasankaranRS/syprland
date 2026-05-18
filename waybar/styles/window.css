@@ -1,6 +1,11 @@
 #window{
     margin: 0 4px;
 }
+
+#waybar {
+  transition: opacity 0s ease, transform 0s ease;
+}
+
 window#waybar {
     background-color: transparent;
     border-bottom: transparent;

@@ -8,27 +8,27 @@
 -- Example window rules that are useful
 
 local suppressMaximizeRule = hl.window_rule({
-    -- Ignore maximize requests from all apps. You'll probably like this.
-    name  = "suppress-maximize-events",
-    match = { class = ".*" },
+	-- Ignore maximize requests from all apps. You'll probably like this.
+	name = "suppress-maximize-events",
+	match = { class = ".*" },
 
-    suppress_event = "maximize",
+	suppress_event = "maximize",
 })
 -- suppressMaximizeRule:set_enabled(false)
 
 hl.window_rule({
-    -- Fix some dragging issues with XWayland
-    name  = "fix-xwayland-drags",
-    match = {
-        class      = "^$",
-        title      = "^$",
-        xwayland   = true,
-        float      = true,
-        fullscreen = false,
-        pin        = false,
-    },
+	-- Fix some dragging issues with XWayland
+	name = "fix-xwayland-drags",
+	match = {
+		class = "^$",
+		title = "^$",
+		xwayland = true,
+		float = true,
+		fullscreen = false,
+		pin = false,
+	},
 
-    no_focus = true,
+	no_focus = true,
 })
 
 -- Layer rules also return a handle.
@@ -41,11 +41,11 @@ hl.window_rule({
 
 -- Hyprland-run windowrule
 hl.window_rule({
-    name  = "move-hyprland-run",
-    match = { class = "hyprland-run" },
+	name = "move-hyprland-run",
+	match = { class = "hyprland-run" },
 
-    move  = "20 monitor_h-120",
-    float = true,
+	move = "20 monitor_h-120",
+	float = true,
 })
 
 -- Steam Games: Enable tearing (immediate) and force fullscreen
@@ -57,42 +57,74 @@ hl.window_rule({
 --     fullscreen = true,
 -- })
 
-
 -- Picture in Picture Rule
 hl.window_rule({
-  name  = "brave-pip",
-  match = { 
-    title = "^(Picture in picture)$" 
-  },
-  float = true,
-  pin   = true,
-  size  = {320, 180},
-  -- Moves it to the bottom right corner (monitor-local coordinates)
-  move  = {"monitor_w - 330", "monitor_h - 190"}
-})
-
-
--- Bluetooth Manager Rule
-hl.window_rule({
-    name  = "bluetooth",
-    match = { 
-    class = "blueman-manager"
-    },
-    float  = true,
-    size   = {"monitor_w * 0.5", "monitor_h * 0.5"},
-    center = true,
-    animation = "popin"
+	name = "brave-pip",
+	match = {
+		title = "^(Picture in picture)$",
+	},
+	float = true,
+	pin = true,
+	size = { 320, 180 },
+	-- Moves it to the bottom right corner (monitor-local coordinates)
+	move = { "monitor_w - 330", "monitor_h - 190" },
 })
 
 -- Bluetooth Manager Rule
 hl.window_rule({
-    name  = "dolphin",
-    match = { 
-    class = "org.kde.dolphin"
-    },
-    float  = true,
-    size   = {"monitor_w * 0.5", "monitor_h * 0.5"},
-    center = true,
-    animation = "popin"
+	name = "bluetooth",
+	match = {
+		class = "blueman-manager",
+	},
+	float = true,
+	size = { "monitor_w * 0.5", "monitor_h * 0.5" },
+	center = true,
+	animation = "popin",
 })
 
+-- FIle Manager
+hl.window_rule({
+	name = "thunar",
+	match = {
+		class = "thunar",
+	},
+	float = true,
+	size = { "monitor_w * 0.5", "monitor_h * 0.5" },
+	center = true,
+	animation = "popin",
+})
+
+-- Audio Control Rule
+hl.window_rule({
+	name = "pavucontrol",
+	match = {
+		class = "org.pulseaudio.pavucontrol",
+	},
+	float = true,
+	size = { "monitor_w * 0.5", "monitor_h * 0.5" },
+	center = true,
+	animation = "popin",
+})
+
+-- Kitty Rule
+hl.window_rule({
+	name = "kitty",
+	match = {
+		class = "kitty",
+	},
+	float = true,
+	size = { "monitor_w * 0.5", "monitor_h * 0.5" },
+	animation = "popin",
+})
+
+-- xdg-desktop-portal-gtk
+hl.window_rule({
+	name = "xdg-desktop-portal-gtk",
+	match = {
+		class = "xdg-desktop-portal-gtk",
+	},
+	float = true,
+	size = { "monitor_w * 0.5", "monitor_h * 0.5" },
+	center = true,
+	animation = "popin",
+})

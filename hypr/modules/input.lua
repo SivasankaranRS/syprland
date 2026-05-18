@@ -27,9 +27,9 @@ hl.gesture({
     direction = "horizontal",
     action = "workspace"
 })
--- Volume UP (Swipe Up)
+-- Zoom in and out with a two-finger pinch gestures
 
-hl.gesture({ fingers = 2, direction = "pinch", action = "cursorZoom", zoom_level = 1, mode = "live" })
+hl.gesture({ fingers = 2, direction = "pinch", mods = "SUPER" ,action = "cursorZoom", zoom_level = 1, mode = "live" })
 
 -- Example per-device config
 -- See https://wiki.hypr.land/Configuring/Advanced-and-Cool/Devices/ for more
@@ -41,4 +41,10 @@ hl.device({
 hl.device ({
         name = "2.4g-mouse-1",
         sensitivity = -0.5, -- Adjust between -1.0 and 0      
+})
+
+hl.config({
+    input =  {
+        kb_options = "caps:swapescape"
+    }
 })

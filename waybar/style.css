@@ -5,6 +5,8 @@
 @import url("styles/window.css");
 @import url("styles/button.css");
 @import url("styles/groups.css");
+@import url("styles/custom/notification.css");
+
 
 * {
     /* `otf-font-awesome` is required to be installed for icons */
@@ -260,4 +262,10 @@ label:focus {
 #bluetooth {
     background-color: #2980b9;
     color: #ffffff;
+}
+
+#custom-power {
+    background-color: #de4126;
+    color: #000000;
+    padding: 0 5px;
 }

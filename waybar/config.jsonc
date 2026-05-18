@@ -11,6 +11,7 @@
 
         "modules/custom/media.jsonc",
         "modules/custom/power.jsonc",
-        "modules/groups/left_group.jsonc"
+        "modules/groups/left_group.jsonc",
+        "modules/custom/notification.jsonc"
     ]
 }
