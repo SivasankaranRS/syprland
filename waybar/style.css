@@ -6,7 +6,7 @@
 @import url("styles/button.css");
 @import url("styles/groups.css");
 @import url("styles/custom/notification.css");
-
+@import url("themes/colors.css");
 
 * {
     /* `otf-font-awesome` is required to be installed for icons */
@@ -18,9 +18,6 @@
 
 
 /* you can set a style on hover for any module like this */
-#pulseaudio:hover {
-    background-color: #a37800;
-}
 
 
 #clock,
@@ -38,21 +35,23 @@
 #tray,
 #mode,
 #idle_inhibitor,
+#keyboard-state,
 #scratchpad,
 #power-profiles-daemon,
 #mpd,
 #custom-left_group-wrap  {
     padding: 0 10px;
-    color: #ffffff;
+    background-color: @background;
+    color: @on-surface;
 }
 
-#clock {
+/* #clock {
     background-color: #64727D;
-}
+} */
 
 #battery {
-    background-color: #ffffff;
-    color: #000000;
+    background-color: @surface_container;
+    color: @on_surface;
 }
 
 #battery.charging, #battery.plugged {
@@ -106,7 +105,7 @@ label:focus {
     color: #000000;
 }
 
-#memory {
+/* #memory {
     background-color: #9b59b6;
 }
 
@@ -183,12 +182,12 @@ label:focus {
 #idle_inhibitor {
     background-color: #2d3436;
 }
-
+*/
 #idle_inhibitor.activated {
     background-color: #ecf0f1;
     color: #2d3436;
 }
-
+/*
 #mpd {
     background-color: #66cc99;
     color: #2a5c45;
@@ -204,7 +203,7 @@ label:focus {
 
 #mpd.paused {
     background-color: #51a37a;
-}
+} */
 
 #language {
     background: #00b093;
@@ -215,8 +214,6 @@ label:focus {
 }
 
 #keyboard-state {
-    background: #97e1ad;
-    color: #000000;
     padding: 0 0px;
     margin: 0 5px;
     min-width: 16px;
@@ -258,7 +255,7 @@ label:focus {
 #privacy-item.audio-out {
     background-color: #0069d4;
 }
-
+/* 
 #bluetooth {
     background-color: #2980b9;
     color: #ffffff;
@@ -268,4 +265,4 @@ label:focus {
     background-color: #de4126;
     color: #000000;
     padding: 0 5px;
-}
+} */

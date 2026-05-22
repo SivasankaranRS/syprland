@@ -90,8 +90,10 @@ hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true 
 -----------------------------
 
 -- Waybar
+-- hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("pkill waybar || waybar  &"))
 hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("pkill -SIGUSR1 '^waybar$'"))
---hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("killall waybar && waybar"))
+-- hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("killall waybar && waybar"))
+
 --Screenshot
 hl.bind("PRINT", hl.dsp.exec_cmd("$HOME/.config/hypr/scripts/capture_menu.sh"), { locked = true })
 
@@ -101,6 +103,7 @@ hl.bind(mainMod .. " + Y", hl.dsp.exec_cmd(clipboard), { locked = true })
 -- Swaync Notifications Center
 hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("swaync-client -t -sw"), { locked = true })
 
+-- Hyprsunset brightness adjust (if using it instead of brightnessctl, otherwise comment out)
 hl.bind(
 	mainMod .. " + XF86MonBrightnessUp",
 	hl.dsp.exec_cmd("hyprctl hyprsunset gamma +10"),
@@ -118,3 +121,5 @@ hl.bind("CTRL + escape", hl.dsp.exec_cmd("hyprlock"), { locked = true, repeating
 -- logout Menu
 hl.bind("SHIFT + escape", hl.dsp.exec_cmd("wleave"), { locked = true, repeating = true })
 
+-- Change Wallpaper alongside the colors of waybar, etc
+hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("$HOME/.config/hypr/scripts/wallpicker.sh"), { locked = true })

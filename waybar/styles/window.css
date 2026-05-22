@@ -35,3 +35,10 @@ window#waybar.chromium {
     background-color: #000000;
     border: none;
 }
+/* Targets hover states for every single module on your bar at once */
+window#waybar .module:hover,
+#waybar label:hover {
+    background-color: @surface_container_high;
+    color: @primary;
+    transition: all 0.2s ease-in-out;
+}

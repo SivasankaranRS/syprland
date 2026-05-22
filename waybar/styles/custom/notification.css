@@ -1,6 +1,6 @@
 #custom-notification {
   font-family: "NotoSansMono Nerd Font";
-  background-color: chartreuse;
-  color: black;
+  background-color: @background;
+  color: @on-background;
   padding: 0 5px;
 }

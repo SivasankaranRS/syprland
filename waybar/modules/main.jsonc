@@ -9,7 +9,7 @@
         "group/left_group",
         "clock",
         "pulseaudio",
-        "custom/media"
+        "custom/media" 
         // "hyprland/mode",
         // "hyprland/scratchpad"
         
@@ -31,6 +31,7 @@
         // "battery#bat2",
         "tray",
         "custom/power"
-    ]
-
+    ],
+  // Change the colors of waybar on reload  
+    "reload_style_on_change": true,
 }

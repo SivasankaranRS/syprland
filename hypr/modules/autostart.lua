@@ -9,10 +9,12 @@
 --
 hl.on("hyprland.start", function()
 	hl.exec_cmd("waybar")
-	hl.exec_cmd("awww-daemon && awww img $HOME/Pictures/Wallpapers/planet.png --transition-type random")
+	hl.exec_cmd("~/.config/hypr/scripts/awww_init.sh")
 	hl.exec_cmd("cursor-clip --daemon")
 	hl.exec_cmd("systemctl --user start hyprpolkitagent")
 	hl.exec_cmd("swaync")
 	hl.exec_cmd("hypridle")
 	hl.exec_cmd("thunar --daemon")
+	hl.exec_cmd("wleave -s=true")
+	hl.exec_cmd("warp-taskbar &")
 end)
