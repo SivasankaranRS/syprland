@@ -9,7 +9,6 @@
 window#waybar {
     background-color: transparent;
     border-bottom: transparent;
-    color: #ffffff;
     transition-property: background-color;
     transition-duration: .5s;
 }
@@ -38,7 +37,7 @@ window#waybar.chromium {
 /* Targets hover states for every single module on your bar at once */
 window#waybar .module:hover,
 #waybar label:hover {
-    background-color: @surface_container_high;
-    color: @primary;
+    background-color: @surface;
+    color: @on_surface;
     transition: all 0.2s ease-in-out;
 }

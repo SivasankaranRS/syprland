@@ -1,6 +1,5 @@
 [config]
-# Sets the default theme styling (choices: 'dark' or 'light')
-mode = "dark"
+
 
 [templates.waybar]
 input_path = "~/.config/matugen/templates/waybar-colors.css"

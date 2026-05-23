@@ -1,0 +1,20 @@
+{
+    "group/hardwaregroup": {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 200,
+            "children-class": "not-power",
+            "transition-left-to-right": true
+        },
+        "modules": [
+            "custom/hardwaregroup-wrap",
+            "cpu",
+            "memory",
+            "temperature"
+        ]
+    },
+        "custom/hardwaregroup-wrap": {
+        "format": "",
+        "tooltip": false
+    }
+}

@@ -31,7 +31,7 @@ echo "$CHOSEN_WALLPAPER" >"$CACHE_FILE"
 
 # Update system graphics assets simultaneously
 awww img "$CHOSEN_WALLPAPER" --transition-type random
-matugen image "$CHOSEN_WALLPAPER" --prefer darkness
+matugen image "$CHOSEN_WALLPAPER" --prefer darkness -t scheme-content
 
 notify-send "Desktop Synced" "Applied layout palette matching $SELECTION" -i "$CHOSEN_WALLPAPER" \
   -t 2000 \
