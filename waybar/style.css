@@ -6,6 +6,10 @@
 @import url("styles/button.css");
 @import url("styles/groups.css");
 @import url("styles/custom/notification.css");
+@import url("styles/battery.css");
+@import url("styles/powerprofilesdaemon.css");
+
+
 @import url("themes/colors.css");
 
 * {
@@ -18,11 +22,7 @@
 }
 
 
-/* you can set a style on hover for any module like this */
-
-
 #clock,
-#battery,
 #cpu,
 #memory,
 #disk,
@@ -38,7 +38,6 @@
 #idle_inhibitor,
 #keyboard-state,
 #scratchpad,
-#power-profiles-daemon,
 #mpd,
 #custom-power,
 #custom-left_group-wrap,
@@ -48,84 +47,45 @@
     color: @on-surface;
 }
 
-/* #clock {
-    background-color: #64727D;
-} */
-
-#battery {
-    background-color: @surface;
-    color: @on_surface;
-}
-
-#battery.charging, #battery.plugged {
-    background-color: @primary_container;
-    color: @on_primary_container;
-}
-
-@keyframes blink {
-    to {
-        background-color: @on_surface;
-        color: @surface;
-    }
-}
-
-/* Using steps() instead of linear as a timing function to limit cpu usage */
-#battery.critical:not(.charging) {
-    background-color: @error_container;
-    color: @on_error_container;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: steps(12);
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-
-/* #power-profiles-daemon {
-    padding-right: 15px;
-} */
-
-#power-profiles-daemon.performance {
-    background-color: #f53c3c;
-    color: #ffffff;
-}
-
-#power-profiles-daemon.balanced {
-    background-color: #2980b9;
-    color: #ffffff;
-}
-
-#power-profiles-daemon.power-saver {
-    background-color: #2ecc71;
-    color: #000000;
-}
+/* ----------------------------------------------- */
 
 label:focus {
     background-color: #000000;
 }
 
+/* ----------------------------------------------- */
 
-
+/* ==========================================
+   NETWORK MODULE
+   ========================================== */
 #network.disconnected {
     background-color: @error_container;
     color: @on_error_container;
 }
-
+/* ----------------------------------------------- */
+/* ==========================================
+   PULSEAUDIO MODULE
+   ========================================== */
 
 #pulseaudio.muted {
     background-color: @error_container;
     color: @on_error_container;
 }
 
-
-#temperature {
-    background-color: @surface;
-    color: @on_surface;
-}
+/* ----------------------------------------------- */
+/* ==========================================
+   TEMPERATURE MODULE
+   ========================================== */
 
 #temperature.critical {
     background-color: @error_container;
     color: @on_error_container;
 }
+/* ----------------------------------------------- */
+
+/* ==========================================
+   TRAY MODULE
+   ========================================== */
 
 #tray > .passive {
     -gtk-icon-effect: dim;
@@ -137,10 +97,22 @@ label:focus {
     color: @on_error_container;
 }
 
+/* ----------------------------------------------- */
+
+/* ==========================================
+   IDLE-INHIBITOR MODULE
+   ========================================== */
+
 #idle_inhibitor.activated {
     background-color: @surface;
     color: @on_surface;
 }
+
+/* ----------------------------------------------- */
+
+/* ==========================================
+   KEYBOARD-STATE MODULE
+   ========================================== */
 
 #keyboard-state {
     background-color: @surface_container; 
@@ -158,6 +130,12 @@ label:focus {
     background-color: @primary_container; 
     color: @on_primary;
 }
+
+/* ----------------------------------------------- */
+
+/* ==========================================
+   PRIVACY MODULE
+   ========================================== */
 
 #privacy {
     padding: 0;
