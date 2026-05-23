@@ -4,7 +4,7 @@
 
 #custom-notification {
   font-family: "NotoSansMono Nerd Font";
-  background-color: @background;
-  color: @on-background;
+  background-color: @surface;
+  color: @on_surface;
   padding: 0 5px;
 }

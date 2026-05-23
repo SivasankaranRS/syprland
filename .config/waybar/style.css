@@ -9,18 +9,18 @@
 @import url("styles/battery.css");
 @import url("styles/powerprofilesdaemon.css");
 
-
 @import url("themes/colors.css");
 
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: "Adwaita Sans", "Font Awesome 7 Free Propo", "Font Awesome 7 Brands Propo", "NotoSans Nerd Font Propo", sans-serif;
+    font-family:
+        "Adwaita Sans", "Font Awesome 7 Free Propo", "Font Awesome 7 Brands Propo",
+        "NotoSans Nerd Font Propo", sans-serif;
     /* font-family: "Adwaita Sans","Font Awesome 7" ,"Font Awesome 7 Brands", "NotoSans Nerd Font Propo", "Noto Sans"; */
     font-size: 13px;
     border: none;
     border-radius: 20px;
 }
-
 
 #clock,
 #cpu,
@@ -44,7 +44,7 @@
 #custom-hardwaregroup-wrap {
     padding: 0 10px;
     background-color: @surface;
-    color: @on-surface;
+    color: @on_surface;
 }
 
 /* ----------------------------------------------- */
@@ -62,6 +62,7 @@ label:focus {
     background-color: @error_container;
     color: @on_error_container;
 }
+
 /* ----------------------------------------------- */
 /* ==========================================
    PULSEAUDIO MODULE
@@ -81,17 +82,23 @@ label:focus {
     background-color: @error_container;
     color: @on_error_container;
 }
+
 /* ----------------------------------------------- */
 
 /* ==========================================
    TRAY MODULE
    ========================================== */
-
-#tray > .passive {
-    -gtk-icon-effect: dim;
+#tray widget>image {
+    color: @surface_variant;
 }
 
-#tray > .needs-attention {
+#tray>.passive {
+    -gtk-icon-effect: dim;
+    background-color: @surface;
+    color: @on_surface;
+}
+
+#tray>.needs-attention {
     -gtk-icon-effect: highlight;
     background-color: @error_container;
     color: @on_error_container;
@@ -115,19 +122,19 @@ label:focus {
    ========================================== */
 
 #keyboard-state {
-    background-color: @surface_container; 
+    background-color: @surface_container;
     color: @on_surface_variant;
     padding: 0 0px;
     margin: 0 5px;
     min-width: 16px;
 }
 
-#keyboard-state > label {
+#keyboard-state>label {
     padding: 0 5px;
 }
 
-#keyboard-state > label.locked {
-    background-color: @primary_container; 
+#keyboard-state>label.locked {
+    background-color: @primary_container;
     color: @on_primary;
 }
 
@@ -157,4 +164,3 @@ label:focus {
 #privacy-item.audio-out {
     background-color: #0069d4;
 }
-

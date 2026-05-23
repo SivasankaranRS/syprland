@@ -3,6 +3,10 @@
 WALL_DIR="$HOME/Pictures/Wallpapers"
 THEME_FILE="$HOME/.config/rofi/wallpicker.rasi"
 CACHE_FILE="$HOME/.cache/awww/wallpaper_history.txt"
+THEME_TRACKER="$HOME/.cache/awww/theme_mode.txt"
+
+CURRENT_MODE=$(cat "$THEME_TRACKER" 2>/dev/null || echo "dark")
+
 # Ensure directory path exists safely
 if [ ! -d "$WALL_DIR" ]; then
   notify-send "Wallpaper Picker" "Drop your background images inside $WALL_DIR"
@@ -31,7 +35,7 @@ echo "$CHOSEN_WALLPAPER" >"$CACHE_FILE"
 
 # Update system graphics assets simultaneously
 awww img "$CHOSEN_WALLPAPER" --transition-type random
-matugen image "$CHOSEN_WALLPAPER" --prefer darkness -t scheme-content
+matugen image "$CHOSEN_WALLPAPER" --prefer darkness -t scheme-content -m "$CURRENT_MODE"
 
 notify-send "Desktop Synced" "Applied layout palette matching $SELECTION" -i "$CHOSEN_WALLPAPER" \
   -t 2000 \

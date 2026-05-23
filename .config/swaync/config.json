@@ -177,13 +177,6 @@
           "command": "if [ \"$SWAYNC_TOGGLE_STATE\" = \"true\" ]; then hyprctl dispatch exec 'hyprsunset --temperature 1000'; else pkill -INT hyprsunset; fi",
           "update-command": "pgrep -x hyprsunset >/dev/null && echo true || echo false"
         },
-
-        {
-          "label": "",
-          "type": "toggle",
-          "active": true,
-          "command": "need update command"
-        },
         {
           "label": " ",
           "type": "toggle",
@@ -197,32 +190,11 @@
           "command": "snapshot"
         },
         {
-          "label": "󰹑",
-          "type": "normal",
-          "command": "$HOME/.config/rofi/scripts/screenshot.sh"
-        },
-
-        {
           "label": "󰖔",
           "type": "toggle",
-          "active": false,
-          "command": "need update command"
-        },
-
-        {
-          "label": "󱗼",
-          "type": "normal",
-          "command": "$HOME/.config/rofi/scripts/apps.sh"
-        },
-        {
-          "label": " ",
-          "type": "normal",
-          "command": "$HOME/.config/rofi/scripts/quicklinks.sh"
-        },
-        {
-          "label": "",
-          "type": "normal",
-          "command": "foot -e nvim ~/.config/hypr/keybindings.txt"
+          "active": true,
+          "command": "~/.config/hypr/scripts/toggle-dark.sh",
+          "update-command": "sh -c '[ \"$(cat ~/.cache/awww/theme_mode.txt 2>/dev/null)\" = \"dark\" ] && echo true || echo false'"
         }
       ]
     }

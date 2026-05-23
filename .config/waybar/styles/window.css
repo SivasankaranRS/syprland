@@ -39,7 +39,9 @@ window#waybar.chromium {
     border: none;
 }
 /* Targets hover states for every single module on your bar at once */
-window#waybar .module:hover,
+window#waybar .module:hover {
+    background-color: @surface_container_high;
+}
 #waybar label:hover {
     background-color: @surface;
     color: @on_surface;

@@ -10,7 +10,8 @@
             "custom/hardwaregroup-wrap",
             "cpu",
             "memory",
-            "temperature"
+            "temperature",
+            "disk"  
         ]
     },
         "custom/hardwaregroup-wrap": {
