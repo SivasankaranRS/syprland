@@ -17,12 +17,12 @@ if [ "$SWAYNC_TOGGLE_STATE" = "true" ]; then
   # Button is ON -> Run Matugen in Dark Mode
   mode="Dark"
   echo "dark" >"$THEME_TRACKER"
-  matugen image "$CHOSEN_WALLPAPER" -m dark --prefer darkness
+  matugen image "$CHOSEN_WALLPAPER" -m dark --prefer darkness --type scheme-fidelity
 else
   # Button is OFF -> Run Matugen in Light Mode
   mode="Light"
   echo "light" >"$THEME_TRACKER"
-  matugen image "$CHOSEN_WALLPAPER" -m light --prefer darkness
+  matugen image "$CHOSEN_WALLPAPER" -m light --prefer darkness --type scheme-content
 fi
 
 notify-send "Desktop Synced" "Applied $mode Mode" -i "$CHOSEN_WALLPAPER" \
