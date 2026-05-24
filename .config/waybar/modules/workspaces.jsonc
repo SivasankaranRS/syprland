@@ -3,6 +3,7 @@
         "disable-scroll": true,
         "all-outputs": true,
         "warp-on-scroll": false,
+        "on-click":"activate",
         "format": "{name}"
     }
     // Modules configuration

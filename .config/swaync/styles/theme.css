@@ -1,17 +1,30 @@
 /* Fallback for older CSS themes */
-@define-color cc-bg rgba(46, 46, 46, 0.7);
-@define-color noti-border-color rgba(255, 255, 255, 0.15);
-@define-color noti-bg rgba(48, 48, 48, 0.8);
-@define-color noti-bg-opaque rgb(48, 48, 48);
-@define-color noti-bg-darker rgb(38, 38, 38);
-@define-color noti-bg-hover rgb(56, 56, 56);
-@define-color noti-bg-hover-opaque rgb(56, 56, 56);
-@define-color noti-bg-focus rgba(68, 68, 68, 0.6);
-@define-color noti-close-bg rgba(255, 255, 255, 0.1);
-@define-color noti-close-bg-hover rgba(255, 255, 255, 0.15);
-@define-color text-color rgb(255, 255, 255);
-@define-color text-color-disabled rgb(150, 150, 150);
-@define-color bg-selected rgb(0, 128, 255);
+/* Control Center Main Window Background */
+@define-color cc-bg alpha(@surface_container, 0.7);
+
+/* Border Lines */
+@define-color noti-border-color alpha(@outline, 0.15);
+
+/* Notification Card Backgrounds */
+@define-color noti-bg alpha(@surface_container_high, 0.8);
+@define-color noti-bg-opaque @surface_container_high;
+@define-color noti-bg-darker @surface_container_low;
+
+/* Notification Card Hover States */
+@define-color noti-bg-hover @surface_container_highest;
+@define-color noti-bg-hover-opaque @surface_container_highest;
+@define-color noti-bg-focus alpha(@surface_variant, 0.6);
+
+/* Close Buttons inside Notifications */
+@define-color noti-close-bg alpha(@surface_variant, 0.4);
+@define-color noti-close-bg-hover alpha(@outline, 0.5);
+
+/* Typography & Text Contrast */
+@define-color text-color @on_surface;
+@define-color text-color-disabled @outline_variant;
+
+/* Global Selection & Main Highlight Accent */
+@define-color bg-selected @primary;
 
 notificationwindow,
 blankwindow,
@@ -20,5 +33,5 @@ blankwindow {
 }
 
 * {
-  font-family: "Adwaita Sans", "Font Awesome 7 Brands", "NotoSans Nerd Font Propo", "Noto Sans";
+  font-family: "Adwaita Sans", "Font Awesome 7 Free Propo", "Font Awesome 7 Brands Propo","NotoSans Nerd Font Propo", sans-serif;
 }

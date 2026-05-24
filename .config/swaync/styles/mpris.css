@@ -1,9 +1,9 @@
 /* Mpris widget */
 :root {
-  --mpris-album-art-overlay: rgba(0, 0, 0, 0.55);
+  --mpris-album-art-overlay: rgba(0, 0, 0, 0);
   --mpris-button-hover: rgba(0, 0, 0, 0.5);
   --mpris-album-art-icon-size: 60px;
-  --mpris-album-art-shadow: 0px 0px 10px rgba(0, 0, 0, 0.75);
+  --mpris-album-art-shadow: 0px 0px 10px rgba(0, 0, 0, 0);
 }
 
 .widget-mpris {

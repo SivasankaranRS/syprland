@@ -10,12 +10,12 @@
   padding: 0;
 }
 
-.widget-title>label {
+.widget-title > label {
   margin-right: 8px;
   font-size: 1.5rem;
 }
 
-.widget-title>button {
+.widget-title > button {
   margin-left: 8px;
   border-radius: var(--border-radius);
 }
@@ -41,12 +41,9 @@
 }
 
 /* Label widget */
-.widget-label>label {
+.widget-label > label {
   font-size: 1.1rem;
 }
-
-
-
 
 /* Menubar widget */
 /* ─── Menubar Buttons ───────────────────────────────────────── */
@@ -55,52 +52,47 @@
   padding: 0px;
 }
 
-
-
 .widget-menubar button {
-  background: transparent;
-  /* outer button bg */
   padding: 5px 7px 5px 10px;
+  background: var(--noti-bg);
+  color: var(--text-color);
+  border: none;
+  box-shadow: var(--notification-shadow);
+  transition: var(--hover-transition);
+  border: 1px solid @outline_variant;
   border-radius: 100px;
 }
 
-/* Hover affect on the outer button */
+/* Hover affect on the outer button wrapper */
 .widget-menubar button:hover {
-  background: #444;
-  border-color: var(--accent-color);
+  background: @primary; /* Pops cleanly into your theme's main accent color */
+  color: @on_primary; /* Changes text to match contrast rule */
+  border-color: @primary;
   border-radius: 100px;
 }
 
-
-/* Specific class for your Power buttons */
-.power-buttons>button {
-  background: #2f2f3f;
-  /* Custom color for power */
-  color: #ff6b6b;
+/* POWER BUTTONS */
+/* Normal state for Power and Powermode buttons */
+.power-buttons button,
+.powermode-buttons > button {
+  background: var(--noti-bg);
+  color: var(--text-color);
+  padding: 5px 15px;
+  box-shadow: var(--notification-shadow);
+  transition: var(--hover-transition);
+  border: 1px solid @outline_variant;
+  border-radius: 100px;
 }
 
-/* Hover for Power buttons */
-.power-buttons>button:hover {
-  background: #4a4a60;
-  color: #ff8787;
+/* Hover state for Power and Powermode buttons */
+.power-buttons > button:hover,
+.powermode-buttons > button:hover {
+  background: @primary; /* Pops cleanly into your theme's main accent color */
+  color: @on_primary;   /* Changes text to match contrast rule */
+  border-color: @primary;
 }
 
-/* Specific class for powermode */
-.powermode-buttons>button {
-  background: #2f3f2f;
-  /* Different tint */
-  color: #8aff8a;
-
-}
-
-/* Hover for powermode */
-.powermode-buttons>button:hover {
-  background: #3f5f3f;
-  color: #caffc8;
-}
-
-
-.widget-menubar>.menu-button-bar {
+.widget-menubar > .menu-button-bar {
   /* The left button container */
   /* The right button container */
   /* The left and right button container */
@@ -159,27 +151,24 @@
 
 .widget-slider {
   padding: 0;
-
 }
 
 .widget-slider label {
   font-size: inherit;
-
 }
 
 /* Backlight widget */
 .widget-backlight {
   padding: 0;
-
 }
 
 /* Inhibitors widget */
-.widget-inhibitors>label {
+.widget-inhibitors > label {
   margin-right: 8px;
   font-size: 1.5rem;
 }
 
-.widget-inhibitors>button {
+.widget-inhibitors > button {
   margin-left: 8px;
   border-radius: var(--border-radius);
 }

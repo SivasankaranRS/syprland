@@ -15,11 +15,21 @@
 
 .widget-buttons-grid flowboxchild>button {
   border-radius: 30px;
+  background: var(--noti-bg);
+  color: var(--text-color);
+  padding: 5px 15px;
+  border: none;
+  box-shadow: var(--notification-shadow);
+  transition: var(--hover-transition);  
 
 }
 
 
 .widget-buttons-grid flowboxchild>button.toggle:checked {
   /* style given to the active toggle button */
-
+  background: var(--noti-bg-hover);
+  color: var(--text-color);
+  box-shadow: var(--notification-shadow);
+  transition: var(--hover-transition);  
 }
+

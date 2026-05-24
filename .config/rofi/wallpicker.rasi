@@ -69,6 +69,6 @@ element-icon {
 
 element-text {
     horizontal-align: 0.5;
-    text-color: #e2e2e9;
+    text-color: #000000;
     margin: 8px 0px 0px 0px;
 }

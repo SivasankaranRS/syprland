@@ -21,7 +21,7 @@
   "timeout-critical": 0,
   "fit-to-screen": true,
   "relative-timestamps": true,
-  "control-center-width": 340,
+  "control-center-width": 400,
   "control-center-height": -1,
   "notification-window-width": 400,
   "keyboard-shortcuts": true,
@@ -33,10 +33,6 @@
   "text-empty": "No Notifications",
   "script-fail-notify": true,
   "scripts": {
-    "example-script": {
-      "exec": "echo 'Do something...'",
-      "urgency": "Normal"
-    },
     "example-action-script": {
       "exec": "echo 'Do something actionable!'",
       "urgency": "Normal",
@@ -55,7 +51,6 @@
     "buttons-grid",
     "volume",
     "slider",
-    "backlight",
     "mpris",
     "dnd",
     "title",
@@ -94,12 +89,7 @@
       "show-per-app-icon": true,
       "show-per-app": true
     },
-    "backlight": {
-      "label": "󰃠",
-      "device": "intel_backlight",
-      "subsystem": "backlight",
-      "min": 5
-    },
+
 
     "menubar": {
       "menu#power-buttons": {
@@ -194,7 +184,7 @@
           "type": "toggle",
           "active": true,
           "command": "~/.config/hypr/scripts/toggle-dark.sh",
-          "update-command": "sh -c '[ \"$(cat ~/.cache/awww/theme_mode.txt 2>/dev/null)\" = \"dark\" ] && echo true || echo false'"
+          "update-command": "grep -q 'dark' ~/.cache/awww/theme_mode.txt 2>/dev/null && echo true || echo false"
         }
       ]
     }

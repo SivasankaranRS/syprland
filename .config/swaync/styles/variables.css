@@ -1,31 +1,44 @@
 :root {
-  --cc-bg: rgba(46, 46, 46, 0.7);
-  --noti-border-color: rgba(255, 255, 255, 0.15);
-  --noti-bg: 48, 48, 48;
-  --noti-bg-alpha: 0.8;
-  --noti-bg-darker: rgb(38, 38, 38);
-  --noti-bg-hover: rgb(56, 56, 56);
-  --noti-bg-focus: rgba(68, 68, 68, 0.6);
-  --noti-close-bg: rgb(78, 78, 78);
-  --noti-close-bg-hover: rgb(94, 94, 94);
-  --text-color: rgb(255, 255, 255);
-  --text-color-disabled: rgb(150, 150, 150);
-  --bg-selected: rgb(0, 128, 255);
+/* Control Center Background */
+  --cc-bg: alpha(@surface_container, 0.7); /* Pulls @surface_container with 70% opacity */
+  
+  /* Borders and Outlines */
+  --noti-border-color: alpha(@outline, 0.3);
+  --border: 1px solid var(--noti-border-color);
+  --border-radius: 12px;
+  
+  /* Notification Cards Background States */
+  /* Note: SwayNC requires raw numbers for --noti-bg to perform internal alpha math */
+  --noti-bg: 37, 30, 26; /* Raw RGB of @surface_container_high */
+  --noti-bg-alpha: 0.85;
+  --noti-bg-darker: @surface_container_low;
+  --noti-bg-hover: @surface_container_highest;
+  --noti-bg-focus: alpha(@surface_variant, 0.6);
+  
+  /* Close Button Backgrounds */
+  --noti-close-bg: @surface_variant;
+  --noti-close-bg-hover: @outline;
+  
+  /* Text Colors */
+  --text-color: @on_surface;
+  --text-color-disabled: @outline_variant;
+  
+  /* Highlight and Selections */
+  --bg-selected: @primary_fixed;
+  --accent-color: @primary;
+  
+  /* Sizes & Structural Rules (Kept identical) */
   --notification-icon-size: 64px;
   --notification-app-icon-size: calc(var(--notification-icon-size) / 3);
   --notification-group-icon-size: 32px;
-  --border: 1px solid var(--noti-border-color);
-  --border-radius: 12px;
-  --notification-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3),
-    0 1px 3px 1px rgba(0, 0, 0, 0.7), 0 2px 6px 2px rgba(0, 0, 0, 0.3);
   --font-size-body: 15px;
   --font-size-summary: 16px;
-  /* Deprecated variables (because of their typos). Keeeping them around for backwards compatibility. */
+  --notification-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3),
+    0 1px 3px 1px rgba(0, 0, 0, 0.7), 0 2px 6px 2px rgba(0, 0, 0, 0.3);
+  
+  /* Transitions */
   --hover-tranistion: background 0.15s ease-in-out;
   --group-collapse-tranistion: opacity 400ms ease-in-out;
   --hover-transition: var(--hover-tranistion);
   --group-collapse-transition: var(--group-collapse-tranistion);
-
-
-  --accent-color: rgba(0, 128, 255, 1);
 }
