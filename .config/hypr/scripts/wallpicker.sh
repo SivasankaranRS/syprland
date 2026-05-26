@@ -39,4 +39,5 @@ matugen image "$CHOSEN_WALLPAPER" --prefer darkness -t scheme-content -m "$CURRE
 
 notify-send "Desktop Synced" "Applied layout palette matching $SELECTION" -i "$CHOSEN_WALLPAPER" \
   -t 2000 \
-  -h string:x-canonical-private-synchronous:wallpicker
+  -h string:x-canonical-private-synchronous:wallpicker \
+  -u normal

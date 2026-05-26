@@ -40,7 +40,7 @@ hl.gesture({
 	fingers = 4,
 	direction = "up",
 	action = function()
-		hl.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+")
+		hl.exec_cmd("swayosd-client --output-volume +5")
 	end,
 })
 
@@ -49,10 +49,25 @@ hl.gesture({
 	fingers = 4,
 	direction = "down",
 	action = function()
-		hl.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-")
+		hl.exec_cmd("swayosd-client --output-volume -5")
 	end,
 })
 
+hl.plugin.hymission.gesture({
+	fingers = 3,
+	direction = "vertical",
+	action = "toggle",
+	scope = "onlycurrentworkspace",
+	recommand = true,
+})
+
+hl.plugin.hymission.gesture({
+	fingers = 3,
+	mods = "SUPER",
+	direction = "vertical",
+	action = "toggle",
+	recommand = true,
+})
 -------------
 -- Devices --
 ------------=
